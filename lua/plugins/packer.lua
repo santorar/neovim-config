@@ -57,4 +57,12 @@ return require('packer').startup(function()
     use {'hrsh7th/cmp-cmdline'}
     use {'hrsh7th/nvim-cmp'}
     use {'onsails/lspkind.nvim'}
+    
+    -- dashboard
+    use {
+        'goolord/alpha-nvim',
+        config = function ()
+            require'alpha'.setup(require'alpha.themes.dashboard'.config)
+        end
+    }
 end)
