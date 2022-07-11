@@ -17,7 +17,7 @@ return require('packer').startup(function()
 
     -- Vin vsnip
     use {'hrsh7th/vim-vsnip'}
-
+    use 'dhruvmanila/telescope-bookmarks.nvim'
     -- status bar
     use {'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -57,12 +57,18 @@ return require('packer').startup(function()
     use {'hrsh7th/cmp-cmdline'}
     use {'hrsh7th/nvim-cmp'}
     use {'onsails/lspkind.nvim'}
-    
-    -- dashboard
+
     use {
         'goolord/alpha-nvim',
         config = function ()
-            require'alpha'.setup(require'alpha.themes.dashboard'.config)
+            require'alpha'.setup(require'plugins.configs.dashboard'.config)
         end
+    }
+    use {
+      "nvim-telescope/telescope-frecency.nvim",
+      config = function()
+        require"telescope".load_extension("frecency")
+      end,
+      requires = {"tami5/sqlite.lua"}
     }
 end)

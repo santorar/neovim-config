@@ -15,9 +15,10 @@ local mappings = {
         name = "telescope",
         f = {":Telescope find_files<CR>", "find files"},
         g = {":Telescope live_grep<CR>", "find words"},
+        r = {":Telescope frecency<CR>", "find files by frecency "},
         b = {":Telescope buffers<CR>", "find buffers"},
-        h = {":Telescope help_tags<CR>", "display help tags"},
-        o = {":Telescope oldfiles<CR>", "display previous files"},
+        h = {":Telescope oldfiles<CR>", "display recent opened files"},
+        m = {":Telescope bookmarks<CR>", "display browser bookmarks"},
     },
     b = {
         name = "Buffers",
@@ -28,6 +29,10 @@ local mappings = {
     u = {
         name = "Update",
         u = {"Packer Sync"},
+    },
+    e = {
+        name = "Edit",
+        n = {":e /home/santorar/.config/nvim/init.lua<CR>","Edit nvim config"},
     },
     g = {
         name = "LSP",
