@@ -17,7 +17,8 @@ local mappings = {
         g = {":Telescope live_grep<CR>", "find words"},
         r = {":Telescope frecency<CR>", "find files by frecency "},
         b = {":Telescope buffers<CR>", "find buffers"},
-        h = {":Telescope oldfiles<CR>", "display recent opened files"},
+        o = {":Telescope oldfiles<CR>", "display recent opened files"},
+        h = {":Telescope help_tags<CR>", "display help guides"},
         m = {":Telescope bookmarks<CR>", "display browser bookmarks"},
     },
     b = {
@@ -50,6 +51,7 @@ local mappings = {
     l = {"Prev buffer"},
     t = {"Duplicate the current line"},
     n = {"Open the Neotree"},
+    ['/'] = {"comment current line"},
 }
 local opts = {
     prefix = "<Leader>",

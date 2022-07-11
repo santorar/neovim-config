@@ -6,7 +6,7 @@ local servers = {'html','cssls','emmet_ls','tsserver','pylsp',}
 
 for _, server in ipairs(servers) do
     lsp[server].setup{
-    capabilities = capabilities
+        capabilities = capabilities
     }
 end
 lsp.sumneko_lua.setup {
