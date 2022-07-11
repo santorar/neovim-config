@@ -1,5 +1,6 @@
 local o = vim.o
 
+
 -- global configs
 o.fileencoding = 'utf-8'
 o.clipboard = "unnamedplus"
@@ -13,6 +14,7 @@ o.splitright = true
 o.showmode = false
 o.scrolloff = 5
 o.timeoutlen = 500
+o.termguicolors = true
 
 -- tab ident configuration
 o.expandtab = true

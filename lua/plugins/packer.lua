@@ -44,7 +44,10 @@ return require('packer').startup(function()
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-    
+
+    -- colorize hex
+    use {'norcalli/nvim-colorizer.lua'}
+
     -- neovim completion
     use {"williamboman/nvim-lsp-installer"}
     use {'neovim/nvim-lspconfig'}
