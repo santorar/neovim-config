@@ -1,4 +1,4 @@
-return require('packer').startup(function()
+return require('packer').startup({function(use)
 	-- Packer can manage ifself
 	use {'wbthomason/packer.nvim'}
     -- neovim completion
@@ -15,6 +15,8 @@ return require('packer').startup(function()
     use {'nvim-telescope/telescope.nvim',requires = { {'nvim-lua/plenary.nvim'} }}
     use {"nvim-telescope/telescope-frecency.nvim",config = function()require"telescope".load_extension("frecency")end,requires = {"tami5/sqlite.lua"}}
     use {'dhruvmanila/telescope-bookmarks.nvim'}
+    -- Git
+    use {'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup{current_line_blame = true} end}
     -- TreeSiter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use {'windwp/nvim-ts-autotag'}
@@ -34,4 +36,12 @@ return require('packer').startup(function()
     use {'andymass/vim-matchup'}
     -- coment fast
     use {'numToStr/Comment.nvim',config = function()require('Comment').setup()end}
-end)
+end,
+config = {
+    display = {
+        open_fn = function ()
+            return require('packer.util').float({ border = 'single'})
+        end
+    }
+}})
+
