@@ -51,7 +51,6 @@ local mappings = {
     l = {"Prev buffer"},
     t = {"Duplicate the current line"},
     n = {"Open the Neotree"},
-    ['/'] = {"comment current line"},
 }
 local opts = {
     prefix = "<Leader>",
