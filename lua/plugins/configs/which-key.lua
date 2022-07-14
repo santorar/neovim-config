@@ -1,4 +1,17 @@
 local wk = require("which-key")
+local terminal = require('toggleterm.terminal').Terminal
+local toggle_float  = function ()
+    local float = terminal:new({direction = "float"})
+    return float:toggle()
+end
+local toggle_lazygit  = function ()
+    local lazygit = terminal:new({cmd = 'lazygit',direction = "float"})
+    return lazygit:toggle()
+end
+local toggle_vertical  = function ()
+    local vertical = terminal:new({direction = "vertical"})
+    return vertical:toggle()
+end
 local mappings = {
     q = {
         name = "Quit",
@@ -49,7 +62,13 @@ local mappings = {
     },
     h = {"Next buffer"},
     l = {"Prev buffer"},
-    t = {"Duplicate the current line"},
+    t = {
+        name = "terminal",
+        t = {":ToggleTerm<CR>","Toggle a horizontal terminal"},
+        v = {toggle_vertical,"Toggle a vertical terminal"},
+        f = {toggle_float,"Toggle a floating terminal"},
+        g = {toggle_lazygit,"Toggle a terminal with lazy git"},
+    },
     n = {"Open the Neotree"},
 }
 local opts = {

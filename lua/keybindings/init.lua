@@ -5,8 +5,6 @@ end
 
 -- save the file
 mapper('n', '<C-s>',":w<CR>")
--- duplicate the current line
-mapper('n', '<Leader>t',':t.<CR>')
 -- toggle the file tree
 mapper('n', '<Leader>n',':NvimTreeToggle<CR>')
 mapper('n', '<C-n>',':NvimTreeToggle<CR>')
