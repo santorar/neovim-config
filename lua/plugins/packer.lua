@@ -24,7 +24,7 @@ return require('packer').startup({function(use)
 	use {'kyazdani42/nvim-tree.lua',requires = {'kyazdani42/nvim-web-devicons',},cmd="NvimTreeToggle",config = "require('plugins.configs.nvim-tree')"}
     -- visual
     use {'norcalli/nvim-colorizer.lua'}
-    use {"lukas-reineke/indent-blankline.nvim"}
+    use {"lukas-reineke/indent-blankline.nvim",event="BufWinEnter",config="require('plugins.configs.indent-blankline')"}
     use {'gruvbox-community/gruvbox', config = "vim.cmd('colorscheme gruvbox')"}
     use {'nvim-lualine/lualine.nvim',requires = { 'kyazdani42/nvim-web-devicons', opt = true },event="BufWinEnter",config = "require('plugins.configs.lualine')"}
     use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons', envent="BufWinEnter", config = "require('plugins.configs.bufferline')"}
@@ -38,6 +38,8 @@ return require('packer').startup({function(use)
     use {"akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
         require("toggleterm").setup()
     end}
+    -- auto save
+    use {'Pocco81/AutoSave.nvim',config = 'require("plugins.configs.autosave")'}
 end,
 config = {
     display = {
